@@ -1,0 +1,126 @@
+body,html{
+    margin:0;
+    padding:0;
+    display: flex;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+}
+.game_div{
+    width:1024px;
+    height:768px;
+    border:1px silver solid;
+    background: linear-gradient(#58c8f8, #a4e1e4); /* æ ‡å‡†çš„è¯­æ³• */
+    position: relative;
+    overflow:hidden;
+}
+.start_btn{
+    background:#f39c12;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    position: absolute;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    bottom:10%;
+    border-radius: 10px;
+    color: white;
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+    border: 5px solid transparent;
+    border-bottom-color: rgba(150, 150, 150, 0.35);
+    cursor: pointer;
+    animation: pulse 1s infinite alternate;
+    transition: background 0.4s, border 0.2s, margin 0.2s;
+    outline: none;
+}
+.start_btn:active{
+    border-bottom-color: transparent;
+}
+.yun{
+    right:-30%;
+    width:30%;
+    position: absolute;
+}
+.plane{
+    width:102px;
+    height:auto;
+    position: absolute;
+    top:350px;
+    left:50px;
+}
+.yun_div{
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.xing_div{
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.liao_div{
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.fly_time{
+    font-size:20px;
+    color:white;
+    font-family:"Microsoft Yahei";
+    position: absolute;
+    top:10px;
+    left:10px;
+    z-index:1000;
+}
+.ran_div{
+    position: absolute;
+    bottom:5px;
+    left:5px;
+    z-index: 1000;
+}
+.ran_div img{
+    height:70px;
+    float:left;
+}
+.ranliao{
+    width:5px;
+    height:30px;
+    background:red;
+    float:left;
+    margin-left:5px;
+    margin-top:25px;
+}
+.liao_big_div{
+    float:left;
+}
+.star_div{
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+.star_div img{
+    width:30px;
+    float:left;
+}
+.text_start{
+    float: left;
+    font-size:20px;
+    color:white;
+    font-family:"Microsoft Yahei";
+    padding-top:2px;
+    padding-left:5px;
+    padding-right:5px;
+}
+.diao_xing{
+    position: absolute;
+    top:-50px;
+    width:40px;
+}
+.diao_liao{
+    position: absolute;
+    top:-50px;
+    width:40px;
+}
