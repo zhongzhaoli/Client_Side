@@ -9,14 +9,21 @@ function ran_start() {
     }
     //燃料减少
     liao_inter = setInterval(function () {
+        if ($(".liao_big_div div").length == 0) {
+            for_end();
+        }
         $(".liao_big_div div:last").remove();
+        if ($(".liao_big_div div").length == 0) {
+            for_end();
+        }
+
     }, 1000)
 
 
     //燃料掉落
-    setTimeout(function(){
+    setTimeout(function () {
         create_liao();
-    },3000)
+    }, 3000)
     ran_inter = setInterval(function () {
         create_liao();
     }, 6000)
