@@ -33,6 +33,8 @@ function create_plane() {
         eat_shar();
         //吃燃料
         eat_liao();
+        //吃鸟
+        eat_bird();
     }, 10)
     //键盘实时控制
     $("body").on('keydown', function (event) {

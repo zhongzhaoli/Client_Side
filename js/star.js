@@ -25,6 +25,7 @@ function eat_shar() {
     var plane = $(".plane")[0];
     if ($(".diao_xing")[0]) {
         var star = $(".diao_xing")[0];
+        
         var star_t = star.offsetTop;
         var star_l = star.offsetLeft;
         var star_r = star.offsetLeft + star.offsetWidth;

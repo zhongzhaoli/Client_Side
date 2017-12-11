@@ -18,6 +18,9 @@ window.onload = function () {
         //星星计算
         star_start();
 
+        //鸟
+        bird_start();
+
         //计时飞行了多久
         $(".fly_time")[0].innerHTML = "0分0秒";
         setInterval(function () {
