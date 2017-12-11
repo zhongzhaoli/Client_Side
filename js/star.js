@@ -3,9 +3,9 @@ function star_start() {
 
     //星星掉落
     create_xing();
-    setInterval(function () {
+    xing_inter = setInterval(function () {
         create_xing();
-    }, 10000)
+    }, 8000)
 }
 //星星动画
 function star_donghua(xing) {
@@ -25,7 +25,7 @@ function eat_shar() {
     var plane = $(".plane")[0];
     if ($(".diao_xing")[0]) {
         var star = $(".diao_xing")[0];
-        
+
         var star_t = star.offsetTop;
         var star_l = star.offsetLeft;
         var star_r = star.offsetLeft + star.offsetWidth;

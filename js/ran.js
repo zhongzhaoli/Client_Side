@@ -1,3 +1,5 @@
+var min = 0;//分
+var secound = 0;//秒
 function ran_start() {
     $(".ran_div").show();
     var a = $("<div class='liao_big_div'></div>").appendTo($(".ran_div"));
@@ -6,16 +8,29 @@ function ran_start() {
         $("<div class='ranliao'></div>").appendTo(a);
     }
     //燃料减少
-    setInterval(function () {
+    liao_inter = setInterval(function () {
         $(".liao_big_div div:last").remove();
     }, 1000)
 
 
     //燃料掉落
-    create_liao();
-    setInterval(function () {
+    setTimeout(function(){
+        create_liao();
+    },3000)
+    ran_inter = setInterval(function () {
         create_liao();
     }, 6000)
+
+    //计时飞行了多久
+    $(".fly_time")[0].innerHTML = "0分0秒";
+    jishi = setInterval(function () {
+        secound++;
+        if (secound >= 60) {
+            secound = 0;
+            min++;
+        }
+        $(".fly_time")[0].innerHTML = min + "分" + secound + "秒";
+    }, 1000);
 }
 //燃料动画
 function star_donghua(liao) {

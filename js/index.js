@@ -1,6 +1,12 @@
 window.onload = function () {
-    var min = 0;//分
-    var secound = 0;//秒
+    //计时器
+    var bird_inter;
+    var xing_inter;
+    var liao_inter;
+    var ran_inter;
+    var yun_inter;
+    var plane_inter;
+    var jishi;
     $(".start_btn").on('click', function () {
 
         //删除开始游戏按钮
@@ -23,13 +29,6 @@ window.onload = function () {
 
         //计时飞行了多久
         $(".fly_time")[0].innerHTML = "0分0秒";
-        setInterval(function () {
-            secound++;
-            if (secound >= 60) {
-                secound = 0;
-                min++;
-            }
-            $(".fly_time")[0].innerHTML = min + "分" + secound + "秒";
-        }, 1000)
+
     });
 }

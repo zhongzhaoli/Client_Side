@@ -1,33 +1,34 @@
 var keyL = keyT = keyR = keyD = false;
+var speed = 5;//移动速度
 function create_plane() {
     var a = $("<img src='images/plane.png' class='plane'>").appendTo($(".game_div"));
     //控制 左右 +-
-    setInterval(function () {
+    plane_inter = setInterval(function () {
         var now_top = $(a)[0].offsetTop;
         var now_left = $(a)[0].offsetLeft;
         if (keyL) {
             if (now_left == 0) {
                 return;
             }
-            $(a)[0].style.left = now_left - 5 + "px";
+            $(a)[0].style.left = now_left - speed + "px";
         }
         if (keyT) {
             if (now_top == 0) {
                 return;
             }
-            $(a)[0].style.top = now_top - 5 + "px";
+            $(a)[0].style.top = now_top - speed + "px";
         }
         if (keyR) {
             if (now_left == 920) {
                 return;
             }
-            $(a)[0].style.left = now_left + 5 + "px";
+            $(a)[0].style.left = now_left + speed + "px";
         }
         if (keyD) {
             if (now_top == 715) {
                 return;
             }
-            $(a)[0].style.top = now_top + 5 + "px";
+            $(a)[0].style.top = now_top + speed + "px";
         }
         //吃星星
         eat_shar();

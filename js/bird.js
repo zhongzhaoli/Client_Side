@@ -1,11 +1,8 @@
 function bird_start() {
-    setTimeout(function () {
-        bird_create();
-    }, 3000)
 
-    setInterval(function () {
+    bird_inter = setInterval(function () {
         bird_create();
-    }, 8000)
+    }, 5000)
 }
 function bird_create() {
     var witch_bird = parseInt(Math.random() * 4);
@@ -37,7 +34,7 @@ function eat_bird() {
         if (plane_d < liao_t || plane_l > liao_r || plane_t > liao_d || plane_r < liao_l) {// 表示没碰上  
 
         } else {
-            $(".bird").remove();
+            for_end();
         }
     }
     else {

@@ -1,6 +1,6 @@
 function yun_start() {
     createyun();
-    setInterval(function () {
+    yun_inter = setInterval(function () {
         createyun();
     }, 750);
 }
