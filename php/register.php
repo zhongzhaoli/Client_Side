@@ -1,6 +1,6 @@
 <?php
 
-$conn = new PDO('mysql:host=localhost;dbname=client_side;charset=utf8', 'root', '', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$conn = new PDO('mysql:host=localhost;dbname=client_side;charset=utf8', 'root', '123456', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $name = $_POST['name'] ?? null;
 $time = $_POST['time'] ?? null;

@@ -166,7 +166,7 @@ body,html{
     text-indent:3px;
     margin-bottom:10px;
 }
-.cen_div button{
+.cen_div .button_for_input{
     width:100px;
     height:25px;
 }
