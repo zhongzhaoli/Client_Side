@@ -13,7 +13,6 @@ function for_end() {
     $("<h1>游戏结束</h1>").appendTo(aa);
     var input = $("<input type='text' class='input_text' placeholder='输入用户名'><br>").appendTo(aa);
     var button = $("<input type='button' class='button_for_input' disabled value='Continue'>").appendTo(aa);
-
     var time;
     $(".button_for_input").on("click", function () {
         if (min != 0) {

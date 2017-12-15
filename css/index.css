@@ -170,3 +170,26 @@ body,html{
     width:100px;
     height:25px;
 }
+.agent_btn{
+    width:100px;
+    height:25px;
+    margin-top:20px;
+}
+.user_list{
+    width: 300px;
+    margin:0;
+    background: white;
+    border-radius: 3px;
+    max-height: 367.2px;
+    overflow:  auto;
+}
+.user_list li{
+    display:flex;
+    padding:10px;
+    align-items:center;
+    justify-content:space-between;
+}
+.myself{
+    background:red;
+    color:#fff;
+}
