@@ -14,6 +14,7 @@
     <script src="js/star.js"></script>
     <script src="js/ran.js"></script>
     <script src="js/bird.js"></script>
+    <script src="js/stop.js"></script>
     <script src="js/ajax.js"></script>
     <title>Document</title>
 </head>
@@ -42,8 +43,17 @@
         <div class="bird_div"></div>
 
         <!-- 开始游戏btn -->
+        <h1 class="title" style="text-align:center;position:relative;top:250px;font-size:50px;">天 空 天 使</h1>
         <button class="start_btn">开始游戏</button>
 
+        <img src="images/sound_on.png" width="40px" style="display:none" class="sound_on_off" alt="">
+
+        <img src="images/stop.png" alt="" style="display:none" class="stop">
+
+        <audio id='bg' src='sound/background.mp3' align='center' border='0' width='1' height='1'loop="loop"></audio>
+        <audio id='ran_end' src='sound/finish.mp3' align='center' border='0' width='1' height='1' audioObject.loop="false"></audio>
+        <audio id='bird_end' src='sound/hit.mp3' align='center' border='0' width='1' height='1' audioObject.loop="false"></audio>
+        <audio id='star' src='sound/star.mp3' align='center' border='0' width='1' height='1' audioObject.loop="false"></audio>
     </div>
 </body>
 

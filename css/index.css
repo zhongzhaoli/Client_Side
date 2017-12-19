@@ -132,7 +132,7 @@ body,html{
 .bird{
     width:75px;
     position: absolute;
-    right:-10%;
+    right:-15%;
     top:50px;
 }
 .mb{
@@ -192,4 +192,16 @@ body,html{
 .myself{
     background:red;
     color:#fff;
+}
+.sound_on_off{
+    position: absolute;
+    right: 10px;
+    bottom:10px;
+    cursor: pointer;
+}
+.stop{
+    position: absolute;
+    bottom:10px;
+    left:50%;
+    cursor: pointer;
 }

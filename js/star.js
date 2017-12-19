@@ -4,12 +4,14 @@ function star_start() {
     //星星掉落
     create_xing();
     xing_inter = setInterval(function () {
-        create_xing();
+        if (!is_stop) {
+            create_xing();
+        }
     }, 8000)
 }
 //星星动画
-function star_donghua(xing) {
-    $(xing).animate({ top: "110%" }, 8000, "linear", function () {
+function star_donghua(xing, time) {
+    $(xing).animate({ top: "110%" }, time, "linear", function () {
         $(xing).remove();
     })
 }
@@ -18,7 +20,7 @@ function create_xing() {
     var height_ = parseInt(Math.random() * 100);
     var xing = $("<img src='images/star-icon.png' class='diao_xing'>").appendTo($(".xing_div"));
     xing[0].style.left = height_ + "%";
-    star_donghua(xing);
+    star_donghua(xing, 7000);
 }
 //吃星星 碰撞事件
 function eat_shar() {
@@ -41,6 +43,9 @@ function eat_shar() {
 
         } else {
             $(".diao_xing").remove();
+            if (sound_type) {
+                document.getElementById("star").play();
+            }
             $(".text_start")[0].innerHTML = parseInt($(".text_start")[0].innerHTML) + 1;
         }
     }

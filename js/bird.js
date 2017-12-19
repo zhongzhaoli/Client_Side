@@ -1,7 +1,9 @@
 function bird_start() {
 
     bird_inter = setInterval(function () {
-        bird_create();
+        if (!is_stop) {
+            bird_create();
+        }
     }, 5000)
 }
 function bird_create() {
@@ -9,10 +11,10 @@ function bird_create() {
     var height_ = parseInt(Math.random() * 90);
     var bird = $("<img src='images/bird/Bird-" + witch_bird + ".gif' class='bird'>").appendTo($(".bird_div"));
     bird[0].style.top = height_ + "%";
-    bird_donghua(bird);
+    bird_donghua(bird, 3000);
 }
-function bird_donghua(bird) {
-    $(bird).animate({ left: '-10%' }, 3000, "linear", function () {
+function bird_donghua(bird, time) {
+    $(bird).animate({ left: '-10%' }, time, "linear", function () {
         $(bird).remove();
     })
 }
@@ -34,6 +36,10 @@ function eat_bird() {
         if (plane_d < liao_t || plane_l > liao_r || plane_t > liao_d || plane_r < liao_l) {// 表示没碰上  
 
         } else {
+            if (sound_type) {
+                document.getElementById("bg").pause();
+                document.getElementById("bird_end").play();
+            }
             for_end();
         }
     }

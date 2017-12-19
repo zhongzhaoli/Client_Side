@@ -9,12 +9,23 @@ function ran_start() {
     }
     //燃料减少
     liao_inter = setInterval(function () {
+        if (is_stop) {
+            return;
+        }
         if ($(".liao_big_div div").length == 0) {
             for_end();
+            if (sound_type) {
+                document.getElementById("bg").pause();
+                document.getElementById("ran_end").play();
+            }
         }
         $(".liao_big_div div:last").remove();
         if ($(".liao_big_div div").length == 0) {
             for_end();
+            if (sound_type) {
+                document.getElementById("bg").pause();
+                document.getElementById("ran_end").play();
+            }
         }
 
     }, 1000)
@@ -22,15 +33,22 @@ function ran_start() {
 
     //燃料掉落
     setTimeout(function () {
-        create_liao();
+        if (!is_stop) {
+            create_liao();
+        }
     }, 3000)
     ran_inter = setInterval(function () {
-        create_liao();
+        if (!is_stop) {
+            create_liao();
+        }
     }, 6000)
 
     //计时飞行了多久
     $(".fly_time")[0].innerHTML = "0分0秒";
     jishi = setInterval(function () {
+        if (is_stop) {
+            return;
+        }
         secound++;
         if (secound >= 60) {
             secound = 0;
@@ -40,8 +58,8 @@ function ran_start() {
     }, 1000);
 }
 //燃料动画
-function star_donghua(liao) {
-    $(liao).animate({ top: "110%" }, 5000, "linear", function () {
+function ran_donghua(liao, time) {
+    $(liao).animate({ top: "110%" }, time, "linear", function () {
         $(liao).remove();
     })
 }
@@ -50,7 +68,7 @@ function create_liao() {
     var height_ = parseInt(Math.random() * 100);
     var liao = $("<img src='images/liao.png' class='diao_liao'>").appendTo($(".liao_div"));
     liao[0].style.left = height_ + "%";
-    star_donghua(liao);
+    ran_donghua(liao, 5000);
 }
 //吃燃料
 function eat_liao() {

@@ -1,5 +1,6 @@
 function for_end() {
     //动画停止
+    is_end = true;
     $(".bird").stop();
     $(".yun").stop();
     $(".diao_liao").stop();
